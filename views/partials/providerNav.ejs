@@ -1,0 +1,64 @@
+
+
+    <div class="row">
+      <div id="sidebar-container" class="sidebar-expanded col-2 d-none d-md-block">
+          <div class="sidebar navbar navbar-expand-xl navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="nav flex-column mr-auto mt-2 mt-sm-0 text-center">
+                <li class="navbar-text nav-link">
+                  <a href="/provider/recordBooks">
+                    <p class="small">Καταχώρηση συγγραμμάτων</p>
+                  </a>
+                </li>
+                <li class="navbar-text nav-link">
+                  <a href="#">
+                      <p class="small">Διαχείρηση συγγραμμάτων</p>
+                  </a>
+                </li>
+                <li class="navbar-text nav-link">
+                  <a href="/provider/statedBooks">
+                      <p class="small">Δηλωθέντα συγγράμματα</p>
+                  </a>
+                </li>
+                <li class="navbar-text nav-link">
+                  <a href="/provider/personalizedHelp">
+                      <p class="small">Βοήθεια/Συχνές ερωτήσεις</p>
+                  </a>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+          <li class="navbar-text dropdown d-sm-block d-md-none">
+              <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Μενού
+              </a>
+              <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+                  <a class="dropdown-item" style="color:black;" href="/provider/recordBooks">Καταχώρηση συγγραμμάτων</a>
+                  <a class="dropdown-item" style="color:black;" href="#">Διαχείρηση συγγραμμάτων</a>
+                  <a class="dropdown-item" style="color:black;" href="/provider/statedBooks">Δηλωθέντα συγγράμματα</a>
+                  <a class="dropdown-item" style="color:black;" href="/provider/personalizedHelp">Βοήθεια/Συχνές ερωτήσεις</a>
+              </div>
+          </li>
+        </div>
+      </nav>
+
+
+
+          <div class="container">
+              <% if(error && error.length > 0) { %>
+                  <div class="alert alert-danger" role="alert">
+                      <%= error %>
+                  </div>
+              <% } %>
+              <% if(success && success.length > 0) { %>
+                  <div class="alert alert-success" role="alert">
+                      <%= success %>
+                  </div>
+              <% } %>
+          </div>

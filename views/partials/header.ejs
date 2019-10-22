@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Εύδοξος</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/css/mdb.min.css" rel="stylesheet">
+
+        <!--  Fonts and icons     -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    </head>
+    <body>
+
+      <header class="jumbotron mdb-color lighten-5 ">
+          <div class="container text-center">
+              <a class="navbar-brand top" href="/"><b>ΕΥΔΟΞΟΣ</b></a>
+          </div>
+      </header>
+
+
+      <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+          <li class="nabar-text nav-link"><a href="/browse" style="color:white;">Παρουσίαση αντικειμένων</a></li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+          <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0"></ul>
+
+              <form action="/search" method="GET" class="my-2 my-lg-0 form-inline">
+
+                <div class="md-form form-sm my-0">
+                  <input class="form-control form-control-sm mr-sm-2 mb-0" type="text" name="search" placeholder="Αναζήτηση" aria-label="Search">
+                  <button class="btn btn-outline-white btn-sm my-0" value="Search" type="submit">Αναζητηση <i class="fa fa-search"></i></button>
+                </div>
+              </form>
+
+
+            <% if(!currentUser){ %>
+                <li class="navbar-text nav-link <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Σύνδεση</a></li>
+                <li class="navbar-text nav-link <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>" id="border"><a href="/register">Εγγραφή</a></li>
+            <% } else { %>
+                <li class="navbar-text nav-link"><a href="/profile">Προφίλ</a></li>
+                <li class="navbar-text nav-link" id="border"><a href="/logout">Αποσύνδεση</a></li>
+            <% } %>
